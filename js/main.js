@@ -14,16 +14,23 @@ class ForeGround {
         this.sprite3.src = `/img/${this.src}.png`;
     }
     draw() {
-        this.ctx.drawImage(this.sprite1,
-            0+cameraMultiplier.x,
-            0+cameraMultiplier.y,
-            canvas.clientWidth/5,
-            canvas.clientHeight/5)
-        this.ctx.drawImage(this.sprite2,
-            canvas.clientWidth/5+cameraMultiplier.x,
-            0+cameraMultiplier.y,
-            canvas.clientWidth/5,canvas.clientHeight/5)
-        this.ctx.drawImage(this.sprite3,(-canvas.clientWidth/5)+cameraMultiplier.x,0+cameraMultiplier.y,canvas.clientWidth/5,canvas.clientHeight/5)
+        this.sprite1.onload = () => {
+            this.ctx.drawImage(this.sprite1,
+                0+cameraMultiplier.x,
+                0+cameraMultiplier.y,
+                canvas.clientWidth/5,
+                canvas.clientHeight/5)
+        }
+        this.sprite2.onload = () => {
+            this.ctx.drawImage(this.sprite2,
+                canvas.clientWidth/5+cameraMultiplier.x,
+                0+cameraMultiplier.y,
+                canvas.clientWidth/5,canvas.clientHeight/5)
+        }
+        this.sprite3.onload = () => {
+            this.ctx.drawImage(this.sprite3,(-canvas.clientWidth/5)+cameraMultiplier.x,0+cameraMultiplier.y,canvas.clientWidth/5,canvas.clientHeight/5)
+        }
+        
             // console.log(this.sprite1.width)
     }
 }
