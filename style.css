@@ -1,0 +1,173 @@
+*{
+	margin: 0%;
+	padding: 0%;
+	box-sizing: border-box;
+	font-family: monospace;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: black;
+	overflow: hidden;
+}
+
+.mainScreen{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 1px solid black;
+	image-rendering: pixelated;
+	transition: 0.5s;
+	/* transform: scale(2) translateY(-50px); */
+}
+
+.ui{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	/* backdrop-filter: blur(10px); */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.healthbar{
+	position: absolute;
+	bottom: 5%;
+	width: 30%;
+	height: 6%;
+	padding: 5px;
+	background: rgb(81, 8, 8);
+	border: 3px solid white;
+	border-radius: 10px 20px 20px 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.health{
+	position: absolute;
+	border-radius: 10px 20px 20px 10px;
+	width: 100%;
+	height: 100%;
+	transition: 0.5s;
+}
+
+.p1{
+	left: 5%;
+}
+
+.p2{
+	right: 5%;
+	border-radius: 20px 10px 10px 20px;
+}
+.p1>.health{
+	left: 0;
+	background: rgb(239, 49, 49);
+	border-radius: 10px 20px 20px 10px;
+}
+.p2>.health{
+	right: 0;
+	background: rgb(32, 32, 255);
+	border-radius: 20px 10px 10px 20px;
+}
+.endScreen{
+	position: absolute;
+	top: -100%;
+	left: 0;
+	text-align: center;
+	padding: 30px;
+	height: 100%;
+	width: 40%;
+	background: brown;
+	background-image: url("/img/wood.png");
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: cover; 
+	z-index: 100000;
+	transition: 0.5s;
+}
+.endScreen.pop{
+	top: 0;
+}
+.endScreen .WinnerAnnouce {
+	margin-top: 300px;
+	color: white;
+}
+.endScreen .rematch {
+	margin-top: 50px;
+	padding: 10px;
+	border: 2px solid white;
+	background: none;
+	color: white;
+	border-radius: 20px;
+}
+
+.inGame_ui{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.dialogue{
+	position: relative;
+	width: 30%;
+	padding: 70px;
+	top: var(--top);
+	left: var(--left);
+	background: brown;
+	border-radius: 10px;
+	border: 3px solid gold;
+	animation: dialogue 0.5s;
+}
+
+.dialogue p {
+	color: white;
+	font-size: 20px;
+}
+
+.ready{
+	display: none;
+}
+.ready.popin{
+	display: flex;
+	font-size: 50px;
+	animation: popin 0.5s;
+}
+
+@keyframes popin{
+	0%{
+		transform: scale(1);
+	}
+	100%{
+		transform: scale(4);
+	}
+}
+@keyframes dialogue{
+	0%{
+		opacity: 0;
+		transform: translateX(0) translateY(0);
+	}
+	20%{
+		transform: translateX(10px) translateY(10px);
+	}
+	40%{
+		transform: translateX(0) translateY(0);
+	}
+	60%{
+		transform: translateX(10px) translateY(10px);
+	}
+	80%{
+		transform: translateX(0) translateY(0);
+	}
+	100%{
+		opacity: 100%;
+	}
+}

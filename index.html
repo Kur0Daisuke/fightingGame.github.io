@@ -1,80 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-	<!-- <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script> -->
+	<meta charset='UTF-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title>Document</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+	<link rel='stylesheet' href='style.css'>
 </head>
 <body>
-	<div class="warn">
-		<h1>We don't support <br> Mobile Devices Yet <br> :< </h1>
-	</div>
-	<div class="mainScreen">
-		<h1 class="title">Fighting Game</h1>
-	</div>
-	<!-- red container div -->
-	<div id="game-container">
-		<!-- <div class="MenuBox Settings">
-			
-		</div> -->
-		<div class="textShower">
-			<h1 class="text"></h1>
-		</div>
-		<!-- smaller red container -->
-		<div id="top-container">
-			<!-- player healthbar -->
-			<div id="playerHealthContainer">
-				<div id="player-background-health">
-				</div>
-				<div id="playerHealth"></div>
+	<div class="game">
+		<canvas class="mainScreen"></canvas>
+		<div class="ui">
+			<div class="ready">
+				Fight!
 			</div>
-			<div class="playerEffects">
-				<img src="" class="playereffect">
+			<div class="endScreen">
+				<h1 class="WinnerAnnouce">Player 1 wins</h1> 
+				<button class="rematch" onclick="rematch()">Re-match</button>
 			</div>
-
-			<!-- timer -->
-			<div id="timer">10</div>
-
-			<!-- enemy healthbar -->
-			<div id="enemyHealthContainer">
-				<div id="enemy-background-health">
-				</div>
-				<div id="enemyHealth"></div>
+			<div class="healthbar p1">
+				<div class="health"></div>
 			</div>
-			<div class="enemyEffects">
-				<img src="" class="enemyeffect">
+			<div class="healthbar p2">
+				<div class="health"></div>
 			</div>
 		</div>
-		<div id="EndScreenContainer">
-			<div id="EndScreen">Tie</div>
-			<button id="EndScreen-button" onclick="restart()">restart</button>
+		<div class="inGame_ui">
 		</div>
-    	<canvas></canvas>
-    </div>
-    <p class="credit">@kuroDev Games</p>
-
-	<div class="controlDiv">
-		<button class="topBut"><ion-icon name="arrow-dropup"></ion-icon></button>
-		<button class="leftBut"><ion-icon name="arrow-dropleft"></ion-icon></button>
-		<button class="rightBut"><ion-icon name="arrow-dropright"></ion-icon></button>
-		<button class="botBut"><ion-icon name="arrow-dropdown"></ion-icon></button>
-		<button class="fightBut"><img src="img/UI/fightButton.png" alt=""></button>
+		
 	</div>
-
-	<img src="img/UI/controlButton.png" class="controller" alt="">
- 
-    <script src="js/utils.js"></script>
-    <script src="js/dash.js"></script>
-    <script src="js/crit.js"></script>
-    <script src="js/classes.js"></script>
-    
-    <script src="js/cp.js"></script>
-    <script src="index.js"></script>
-    
-    <script src="js/restart.js"></script>
-    
+	
+	
+	<script src='js/sources.js'></script>
+	<script src='js/cutScenes.js'></script>
+	<script src='js/extensions.js'></script>
+	<script src='js/sprite.js'></script>
+	<script src='js/players.js'></script>
+	<script src='js/main.js'></script>
 </body>
 </html>
