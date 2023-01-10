@@ -14,7 +14,9 @@ What do you do in this game?
 
 # NOTE :book:
 
-> test runs are not available yet
+- sprites aren't drawn by me, they are currently `borrowed` 🥴
+
+- test runs are not available yet
   there are rendering issues
 
 # And Some Screenshots :camera:
