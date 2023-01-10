@@ -21,19 +21,23 @@ class Sprite {
         this.hitSpriteX = 0
         this.hitstarted = false
         this.death = false
+        this.flags = {spriteLoaded:false,hitmarkLoaded:false}
     }
     draw(x,y,width,height) {
+        this.sprite.onload = () => {this.flags.spriteLoaded = true}
+        this.hitSprite.onload = () => {this.flags.hitmarkLoaded = true}
+
         this.sprite.src = `${this.src}/${this.Currentsprite}.png`
         this.x = x + cameraMultiplier.x;
         this.y = y + cameraMultiplier.y;
-        this.ctx.drawImage(
+        !this.flags.spriteLoaded || this.ctx.drawImage(
             this.sprite, 
             this.cellX*200,0,
             200, 200,
             this.x-100, this.y-100,
             width,height
         )
-        !this.hitstarted || this.ctx.drawImage(
+        !this.flags.hitSprite && !this.hitstarted || this.ctx.drawImage(
             this.hitSprite, 
             this.hitSpriteX,0,
             100, 100,
