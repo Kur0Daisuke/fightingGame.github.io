@@ -19,17 +19,22 @@ What do you do in this game?
 
 # And Some Screenshots :camera:
 
+<hr>
+
 > these screenshots are from current state of the game.
 
 <img src="/img/screenshots/Screenshot (5).png"></img>
 
+<hr>
 
 <img src="/img/screenshots/Screenshot (6).png"></img>
 
+<hr>
 
 <img src="/img/screenshots/Screenshot (12).png"></img>
 
+<hr>
 
 <img src="/img/screenshots/Screenshot (13).png"></img>
 
-[@Kur0Daisuke](`@Kur0Daisuke`) :shipit:
+[https://github.com/Kur0Daisuke](`@Kur0Daisuke`) :shipit:
