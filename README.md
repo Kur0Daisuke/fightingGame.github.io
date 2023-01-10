@@ -12,7 +12,7 @@ any bugs or unliked feature will be kindly accepted by the team!.
 ## NOTE : 
 
 > test runs are not available yet
-
+  there are rendering issues
 
 ## And Some Screenshots
 
