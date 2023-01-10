@@ -19,18 +19,18 @@ class ForeGround {
         this.sprite1.onload = () => {this.flags.image1Loaded = true}
         this.sprite2.onload = () => {this.flags.image2Loaded = true}
         this.sprite3.onload = () => {this.flags.image3Loaded = true}
-        this.flags.image1Loaded || this.ctx.drawImage(this.sprite1,
+        !this.flags.image1Loaded || this.ctx.drawImage(this.sprite1,
             0+cameraMultiplier.x,
             0+cameraMultiplier.y,
             canvas.clientWidth/5,
             canvas.clientHeight/5)
 
-        this.flags.image2Loaded || this.ctx.drawImage(this.sprite2,
+        !this.flags.image2Loaded || this.ctx.drawImage(this.sprite2,
             canvas.clientWidth/5+cameraMultiplier.x,
             0+cameraMultiplier.y,
             canvas.clientWidth/5,canvas.clientHeight/5)
-            
-        this.flags.image2Loaded || this.ctx.drawImage(this.sprite3,(-canvas.clientWidth/5)+cameraMultiplier.x,0+cameraMultiplier.y,canvas.clientWidth/5,canvas.clientHeight/5)
+
+        !this.flags.image2Loaded || this.ctx.drawImage(this.sprite3,(-canvas.clientWidth/5)+cameraMultiplier.x,0+cameraMultiplier.y,canvas.clientWidth/5,canvas.clientHeight/5)
 
         
             // console.log(this.sprite1.width)
