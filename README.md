@@ -1,9 +1,32 @@
-# fightingGame
-a small game developed by Kuro Team.
+# FightingGame
+Havn't thought of naming yet :P
 
-any bugs or unliked feature will be kindly accepted by the team!
+A small game developed by `Kuro Team` using raw html, css and javascript.
 
-Note: test runs are not available yet
+What do you do in this game?
+> at this state, you can only hit and try to defeat your oponent for now. There will be more modes later on!
 
-#some screenshots
-<img src="/img/dummy.png"></img>
+any bugs or unliked feature will be kindly accepted by the team!.
+
+
+## NOTE : 
+
+> test runs are not available yet
+
+
+## And Some Screenshots
+
+> these screenshots are from current state of the game.
+
+<img src="/img/screenshots/Screenshot (5).png"></img>
+
+
+<img src="/img/screenshots/Screenshot (6).png"></img>
+
+
+<img src="/img/screenshots/Screenshot (12).png"></img>
+
+
+<img src="/img/screenshots/Screenshot (13).png"></img>
+
+@Kur0Daisuke :shipit:
