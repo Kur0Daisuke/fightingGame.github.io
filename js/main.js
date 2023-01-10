@@ -38,15 +38,16 @@ class ForeGround {
 }
 
 const players = [
-    new Player(-50,103,canvas,ctx,"p1"),
+    new Player(100,103,canvas,ctx,"p1"),
     new Player(250,100,canvas,ctx,"p2")
 ]
 var foreGround = new ForeGround("background", ctx)
 var extensions = new Extensions(canvas)
 var cutscene = new CutScene(players[0],players[1])
 
+const introDialogue = ["We meet again here huh?", "totally not surprised to see again", "enough wasting time talking\nlet's fight", "i got one thing to say tho,\nIts who?", "who what?", "WHO ASKED"]
 function main() {
-    cutscene.main()
+    // cutscene.start(introDialogue, [{x:100,y:players[0].y},{x:250,y:players[1].y}])
     ctx.imageSmoothingEnabled = false;
     foreGround.draw()
     players.forEach((e) => {

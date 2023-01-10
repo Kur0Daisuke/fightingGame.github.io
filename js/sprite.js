@@ -134,6 +134,7 @@ class Sprite {
     changeSprite(sprite) {
         if(!this.actionBlock || this.death) {
             this.Currentsprite = sprite
+            this.flags.spriteLoaded = false
         }else {
             return
         } 
