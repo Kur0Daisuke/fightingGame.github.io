@@ -37,4 +37,4 @@ What do you do in this game?
 
 <img src="/img/screenshots/Screenshot (13).png"></img>
 
-[https://github.com/Kur0Daisuke](`@Kur0Daisuke`) :shipit:
+[ https://github.com/Kur0Daisuke/ ]( @Kur0Daisuke ) :shipit:
