@@ -1,32 +1,42 @@
-# FightingGame
+# Fighting Game :fist:
 Havn't thought of naming yet :P
 
 A small game developed by `Kuro Team` using raw html, css and javascript.
 
+<hr>
+
 What do you do in this game?
-> at this state, you can only hit and try to defeat your oponent for now. There will be more modes later on!
+- at this state, you can only hit and try to defeat your oponent for now. There will be more modes later on!
 
-any bugs or unliked feature will be kindly accepted by the team!.
+`any bugs or unliked feature will be kindly accepted by the team!`.
 
+<hr>
 
-## NOTE : 
+# NOTE :book:
 
-> test runs are not available yet
+- sprites aren't drawn by me, they are currently `borrowed` 🥴
 
+- test runs are not available yet
+  there are rendering issues
 
-## And Some Screenshots
+# And Some Screenshots :camera:
+
+<hr>
 
 > these screenshots are from current state of the game.
 
 <img src="/img/screenshots/Screenshot (5).png"></img>
 
+<hr>
 
 <img src="/img/screenshots/Screenshot (6).png"></img>
 
+<hr>
 
 <img src="/img/screenshots/Screenshot (12).png"></img>
 
+<hr>
 
 <img src="/img/screenshots/Screenshot (13).png"></img>
 
-@Kur0Daisuke :shipit:
+[ https://github.com/Kur0Daisuke/ ]( @Kur0Daisuke ) :shipit:
