@@ -117,7 +117,7 @@ body{
 	height: 100%;
 }
 .dialogue{
-	position: relative;
+	position: absolute;
 	width: 30%;
 	padding: 70px;
 	top: var(--top);
@@ -127,10 +127,25 @@ body{
 	border: 3px solid gold;
 	animation: dialogue 0.5s;
 }
+.dialogue.narrate{
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: black;
+	width: 100%;
+	height: 50px;
+	bottom: 0%;
+	z-index: 1000;
+}
+.dialogue.narrate p {
+	font-size: 50px;
+}
 
 .dialogue p {
 	color: white;
 	font-size: 20px;
+	
 }
 
 .ready{

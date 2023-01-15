@@ -57,6 +57,13 @@ class Sprite {
                     animateSelf()
                 }, (this.sprite.width/10) * this.animSpeedMultiply)
             }else {
+                let endscene = new CutScene(players[0], players[1])
+                endscene.start([
+                    {
+                        type: "dialogue",
+                        job: {log:[`${this.type == "p1" ? "player2" : "player1"} : Told ya not to mess with me`],type: "Narrate",lineDelay: 1000}
+                    }
+                ])
                 console.log(window.winner.target.sprite.x)
                 var move = (flag="all") => {
                     if(window.winner.target.sprite.x < 150 && flag == "less" || window.winner.target.sprite.x < 150 &&  flag == "all") {
@@ -74,6 +81,9 @@ class Sprite {
                 move()
                 document.querySelector(".endScreen").classList.add("pop")
                 document.querySelector(".WinnerAnnouce").innerHTML = `${window.winner.name} wins`
+                players.forEach((e) => {
+                    e.sprite.animSpeedMultiply = 1;
+                })
             }
         }
         animateSelf()

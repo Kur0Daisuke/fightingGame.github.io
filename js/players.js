@@ -78,15 +78,17 @@ class Player{
         this.canAttack = true
         this.actionBlock = false
         //double slicing algorithm
+        
         if(this.combo == 1) {
             this.combo = 0
-            return
+            console.log(this.combo)
         }else {
             this.combo++
             setTimeout(() => {
                 this.combo = 0
-            }, 300)
+            }, 1000)
         }
+        
     }
     async getHit(dmg) {
         audios.hit.pause();
