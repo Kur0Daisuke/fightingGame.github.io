@@ -157,6 +157,21 @@ body{
 	animation: popin 0.5s;
 }
 
+.loading{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: black;
+	width: 100%;
+	height: 100%;
+	z-index: 100000;
+	color: white;
+}
+.loading p {
+	font-size: 80px;
+}
+
 @keyframes popin{
 	0%{
 		transform: scale(1);
