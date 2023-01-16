@@ -1,6 +1,7 @@
 const canvas = document.querySelector(".mainScreen");
+canvas.width = Math.floor(innerWidth/5);
+canvas.height = Math.floor(innerHeight/5);
 const ctx = canvas.getContext("2d")
-
 
 class ForeGround {
     constructor(src,ctx) {
@@ -74,8 +75,6 @@ const wait = async  () => {
 }
 wait()
 function main() {
-    // cutscene.start(introDialogue, [{x:100,y:players[0].y},{x:250,y:players[1].y}])
-    
     ctx.imageSmoothingEnabled = false;
     foreGround.draw()
     players.forEach((e) => {
@@ -92,6 +91,11 @@ window.addEventListener("keydown", (e) => {
 
 window.addEventListener("keyup", (e) => {
     keys[e.key] = false
+})
+
+window.addEventListener('resize', () => {
+    canvas.width = Math.floor(innerWidth/5);
+    canvas.height = Math.floor(innerHeight/5);
 })
 
 function rematch() {

@@ -17,7 +17,8 @@ const images = [
     "img/samuraiMack/Run.png",
     "img/samuraiMack/Take hit.png",
 
-    "img/background.png"
+    "img/background.png",
+    "img/wood.png"
 ]
 
 
