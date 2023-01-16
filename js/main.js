@@ -7,12 +7,12 @@ class ForeGround {
         this.src = src
         this.ctx = ctx
         this.sprite1 = new Image();
-        this.sprite1.src = `/img/${this.src}.png`;
+        this.sprite1.src = `img/${this.src}.png`;
 
         this.sprite2 = new Image();
-        this.sprite2.src = `/img/${this.src}.png`;
+        this.sprite2.src = `img/${this.src}.png`;
         this.sprite3 = new Image();
-        this.sprite3.src = `/img/${this.src}.png`;
+        this.sprite3.src = `img/${this.src}.png`;
         this.flags = {image1Loaded:false,image2Loaded:false,image3Loaded:false}
     }
     draw() {
