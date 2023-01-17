@@ -5,11 +5,8 @@ class Dialogues{
         this.dialogueBoxp2 = document.createElement("div")
         this.pos = pos
         this.delay = delay
-        this.ui = document.querySelector(".inGame_ui");
+        this.ui = document.querySelector(".dialogues");
         this.type = type;
-    }
-    popups () {
-        
     }
     render() {
         console.log()
@@ -170,6 +167,9 @@ class CutScene{
             
         })
     }
+    Callback(callback) {
+        callback()
+    }
     async JobHandler(jobs) {
         if(this.currentJob == jobs.length) { 
             this.players.forEach((e) => {
@@ -178,7 +178,7 @@ class CutScene{
             return 
         }
         const jobType = jobs[this.currentJob].type;
-        jobType == "position" ? await this.rePosition(jobs[this.currentJob].job) : await this.Dialogues(jobs[this.currentJob].job)
+        jobType == "position" ? await this.rePosition(jobs[this.currentJob].job) : (jobType == "dialogue" ? await this.Dialogues(jobs[this.currentJob].job) : this.Callback(jobs[this.currentJob].job))
         
         this.currentJob++;
         this.JobHandler(jobs)

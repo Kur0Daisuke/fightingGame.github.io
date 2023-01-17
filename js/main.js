@@ -33,10 +33,10 @@ class ForeGround {
             // console.log(this.sprite1.width)
     }
 }
-
+var yLimit = (canvas.height - (canvas.height/3.2))
 const players = [
-    new Player(0,103,canvas,ctx,"p1"),
-    new Player(300,100,canvas,ctx,"p2")
+    new Player(0,yLimit,canvas,ctx,"p1"),
+    new Player(300,yLimit+3,canvas,ctx,"p2")
 ]
 var foreGround = new ForeGround("background", ctx)
 var extensions = new Extensions(canvas)
@@ -66,6 +66,16 @@ cutscene.start([
         type:"dialogue",
         job:{log:["Fight"],type:"Narrate",lineDelay:500}
     },
+    {
+        type: "onend",
+        job: () => {
+            document.querySelector(".controlPopup").style.opacity = "100%"
+            setTimeout(() => {
+                document.querySelector(".controlPopup").style.opacity = "0%"
+            }, 4000)
+            
+        },
+    }
 ])
 
 const wait = async  () => {
@@ -94,6 +104,7 @@ window.addEventListener("keyup", (e) => {
 })
 
 window.addEventListener('resize', () => {
+    yLimit = (canvas.height - (canvas.height/3.2))
     canvas.width = Math.floor(innerWidth/5);
     canvas.height = Math.floor(innerHeight/5);
 })

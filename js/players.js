@@ -164,13 +164,13 @@ class Player{
             this.Jump()
         }
         //gravity
-        if(this.type == "p1" ? this.y < 103 : this.y < 100) {
+        if(this.type == "p1" ? this.y < yLimit+3 : this.y < yLimit) {
             this.sprite.changeSprite("Fall")
             this.y += this.velocity;
             this.velocity += this.acceleration;
             this.canJump = false
         }else if(!this.isJumping) {
-            this.y = this.type == "p1" ? 103 : 100
+            this.y = this.type == "p1" ? yLimit+3 : yLimit
             this.velocity = 0
             this.canJump = true
         }
