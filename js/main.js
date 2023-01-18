@@ -36,7 +36,7 @@ class ForeGround {
 var yLimit = (canvas.height - (canvas.height/3.2))
 const players = [
     new Player(0,yLimit,canvas,ctx,"p1"),
-    new Player(300,yLimit+3,canvas,ctx,"p2")
+    new Player(300,yLimit-3,canvas,ctx,"p2")
 ]
 var foreGround = new ForeGround("background", ctx)
 var extensions = new Extensions(canvas)
@@ -72,7 +72,7 @@ cutscene.start([
             document.querySelector(".controlPopup").style.opacity = "100%"
             setTimeout(() => {
                 document.querySelector(".controlPopup").style.opacity = "0%"
-            }, 4000)
+            }, 5000)
             
         },
     }

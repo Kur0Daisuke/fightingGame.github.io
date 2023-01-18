@@ -43,6 +43,12 @@ class Player{
         this.death = false
         this.cutSceneOnGoing = false
         this.AmountToDash = {direction:"none", amount:0}
+        this.dir = "right";
+        this.dashAvailableLeft = 0
+        this.dashClicked = false
+        this.dashDelay = false
+        this.dashAvailableRight = 0
+        this.dashstarting= false;
     }
     collisionDetect() {
         let oponentBox = players[this.index]
@@ -57,14 +63,19 @@ class Player{
         }
     }
     async attack() {
+        
         this.canAttack = false
         this.actionBlock = true
         let spritechoose = this.combo == 0 ? "Attack1" : "Attack2" 
         audios.slash.pause();
         audios.slash.currentTime = 0;
         audios.slash.play()
+        console.log(this.sprite.sprite)
+        this.sprite.changeSprite(spritechoose)
+        
         await this.sprite.waitToResolve(spritechoose)
         if(this.collisionDetect() && !players[this.index].death && !this.death) {
+            console.log("attack")
             players[this.index].getHit(this.damage)
             players[this.index].sprite.hitMark()
             extensions.shake(600)
@@ -75,6 +86,7 @@ class Player{
             }
             
         }
+        // console.log(this.sprite.sprite)
         this.canAttack = true
         this.actionBlock = false
         //double slicing algorithm
@@ -141,36 +153,94 @@ class Player{
         !this.canAttack || this.sprite.changeSprite("Idle")  
         !this.canAttack || (this.actionBlock = false)
     }
+    Dash(){
+        if(this.dashstarting == true) {return}
+        this.dashDelay = true;
+        
+        this.dashstarting = true
+        const incrementX = (time=0) => {
+            this.sprite.changeSprite("Run")
+            this.actionBlock = true
+            let timeCheck = time
+            if(timeCheck == 10) {
+                this.actionBlock = false
+                this.dashstarting=false
+                setTimeout(() => {
+                    this.dashDelay = false
+                }, 2000)
+                return
+            }
+            if(this.dir == "right") {
+                this.x+=this.speed+2;
+            }else if(this.dir == "left") {
+                this.x-=this.speed+2;
+            }
+            
+            requestAnimationFrame(() => {incrementX(timeCheck+=1)});
+        }
+        incrementX()
+        console.log("dash")
+    }
 
     render() {
         // this.ctx.fillRect((this.x+this.attackRange.Modifier.x),(this.y+this.attackRange.Modifier.y),this.attackRange.width,this.attackRange.height)
+        if(this.dashstarting) {
+            this.ctx.globalAlpha = 0.5
+            if(this.dir == "right") {
+                this.sprite.draw(this.x-10,this.y,200,200)
+                this.sprite.draw(this.x-20,this.y,200,200)
+            }else if(this.dir == "right") {
+                this.sprite.draw(this.x+20,this.y,200,200)
+                this.sprite.draw(this.x+30,this.y,200,200)
+            }
+            
+        }
+        this.ctx.globalAlpha = 1
         this.sprite.draw(this.x,this.y,200,200)
+        
     }
     move() {
-        
         if(this.cutSceneOnGoing) return
-        if(keys[this.inputToCheck[2]] && this.canAttack && !this.death && !players[this.index].death) {
+        if(this.dashAvailableRight >= 2) {
+            this.Dash()
+        }if(this.dashAvailableLeft >= 2) {
+            this.Dash()
+        }else if(keys[this.inputToCheck[2]] && this.canAttack && !this.death && !players[this.index].death) {
             this.attack()
         }else if(keys[this.inputToCheck[1]] && !this.death && !players[this.index].death) {
+            
             this.x += this.speed
+            this.dir = "right"
             this.sprite.changeSprite("Run")
+            if(!this.dashClicked && !this.dashDelay) {
+                this.dashAvailableRight += 1;
+                this.dashClicked = true
+                setTimeout(() => {this.dashAvailableRight=0},500)
+            }
         }else if(keys[this.inputToCheck[0]] && !this.death && !players[this.index].death) {
             this.x -= this.speed
+            this.dir = "left"
+            if(!this.dashClicked && !this.dashDelay) {
+                this.dashAvailableLeft += 1;
+                this.dashClicked = true
+                setTimeout(() => {this.dashAvailableLeft=0},500)
+            }
             this.sprite.changeSprite("Run")
         }else if(!this.actionBlock && !this.death) {
+            this.dashClicked = false
             this.sprite.changeSprite("Idle")
         }
         if(keys[this.inputToCheck[3]] && this.canJump && !this.death && !players[this.index].death) {
             this.Jump()
         }
         //gravity
-        if(this.type == "p1" ? this.y < yLimit+3 : this.y < yLimit) {
+        if(this.type == "p1" ? this.y < yLimit : this.y < yLimit-3) {
             this.sprite.changeSprite("Fall")
             this.y += this.velocity;
             this.velocity += this.acceleration;
             this.canJump = false
         }else if(!this.isJumping) {
-            this.y = this.type == "p1" ? yLimit+3 : yLimit
+            this.y = this.type == "p1" ? yLimit : yLimit-3
             this.velocity = 0
             this.canJump = true
         }
