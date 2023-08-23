@@ -1,24 +1,24 @@
 const images = [
-    "img/kenji/Attack1.png",
-    "img/kenji/Attack2.png",
-    "img/kenji/Death.png",
-    "img/kenji/Fall.png",
-    "img/kenji/Idle.png",
-    "img/kenji/Jump.png",
-    "img/kenji/Run.png",
-    "img/kenji/Take Hit.png",
+    "./img/kenji/Attack1.png",
+    "./img/kenji/Attack2.png",
+    "./img/kenji/Death.png",
+    "./img/kenji/Fall.png",
+    "./img/kenji/Idle.png",
+    "./img/kenji/Jump.png",
+    "./img/kenji/Run.png",
+    "./img/kenji/Take Hit.png",
     
-    "img/samuraiMack/Attack1.png",
-    "img/samuraiMack/Attack2.png",
-    "img/samuraiMack/Death.png",
-    "img/samuraiMack/Fall.png",
-    "img/samuraiMack/Idle.png",
-    "img/samuraiMack/Jump.png",
-    "img/samuraiMack/Run.png",
-    "img/samuraiMack/Take Hit.png",
+    "./img/samuraiMack/Attack1.png",
+    "./img/samuraiMack/Attack2.png",
+    "./img/samuraiMack/Death.png",
+    "./img/samuraiMack/Fall.png",
+    "./img/samuraiMack/Idle.png",
+    "./img/samuraiMack/Jump.png",
+    "./img/samuraiMack/Run.png",
+    "./img/samuraiMack/Take Hit.png",
 
-    "img/background.png",
-    "img/wood.png"
+    "./img/background.png",
+    "./img/wood.png"
 ]
 
 
