@@ -6,7 +6,7 @@ const images = [
     "./img/kenji/Idle.png",
     "./img/kenji/Jump.png",
     "./img/kenji/Run.png",
-    "./img/kenji/Take Hit.png",
+    "./img/kenji/TakeHit.png",
     
     "./img/samuraiMack/Attack1.png",
     "./img/samuraiMack/Attack2.png",
@@ -15,7 +15,7 @@ const images = [
     "./img/samuraiMack/Idle.png",
     "./img/samuraiMack/Jump.png",
     "./img/samuraiMack/Run.png",
-    "./img/samuraiMack/Take Hit.png",
+    "./img/samuraiMack/TakeHit.png",
 
     "./img/background.png",
     "./img/wood.png"
